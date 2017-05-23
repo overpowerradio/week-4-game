@@ -1,0 +1,22 @@
+body {
+	background-image: url("../images/background1.jpg");
+	color: #ffffff;
+	font-family: 'Oswald', sans-serif, 'Kumar One', cursive, 'Fjalla One', sans-serif;
+	font-size: 20px;
+}
+
+h1 {
+	font-family: 'Barrio', cursive;
+	font-size: 35px;
+	text-align: right;
+	margin-right: 20px;
+}
+
+#simpsons {
+	text-align: right;
+	margin-right: 20px;
+}
+
+.characters {
+	height: 100px;
+}
