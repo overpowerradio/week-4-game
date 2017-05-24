@@ -3,20 +3,40 @@ body {
 	color: #ffffff;
 	font-family: 'Oswald', sans-serif, 'Kumar One', cursive, 'Fjalla One', sans-serif;
 	font-size: 20px;
+	margin: 0;
+	padding: 0;
+}
+
+header {
+	width: 100%;
+
 }
 
 h1 {
 	font-family: 'Barrio', cursive;
 	font-size: 35px;
-	text-align: right;
-	margin-right: 20px;
+	float: right;
+	margin-top: 0px;
+	margin-right: 10px;
+
+}
+
+#chooseCharacter {
+	clear: both;
+	padding-top: 5px;
 }
 
 #simpsons {
-	text-align: right;
-	margin-right: 20px;
+	float: left;
+	margin-left: 0px 0px 0px 10px;
 }
 
 .characters {
-	height: 100px;
+	height: 120px;
+	width: 91px;
+	margin-right: 10px;
+}
+
+h2 {
+	color: blue;
 }
