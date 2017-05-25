@@ -11,6 +11,9 @@ var enemyLineUp = [];
 
 var isPicked = false; //means nothing has been picked
 
+var battlingNow = false; //means there is no enemy in the fight section of the game.
+
+var opponent;
 
 //(dot each) .each  is a simple to way to write a loop using jQuery. I can still use "i" as a variable to loop through arrays and strings by their index. 
 $(".characters").each(function (i) {
@@ -22,7 +25,7 @@ $(".characters").each(function (i) {
 		// console.log($(this).attr("src"));
 })
 
-console.log(charList);
+
 
 //Here is where I write conditional statements, so when I click on a character in (charList), the character will become "myCharacter" and move to <div id="yourCharacter"> on the html page and simultaneiouly defining the enemyLineUp and putting the enemy images in their appropriate <div>
 
@@ -35,7 +38,7 @@ $(".characters").on("click", function() {
 		myCharacter = $(this);
 
 		//...to make the character that I click on become (myCharacter).
-		 
+		
 
 		isPicked = true;
 
@@ -54,14 +57,26 @@ $(".characters").on("click", function() {
 		//console.log(enemyLineUp); to check that it works
 		//console.log(myCharacter); to check that it works
 
-		$("#Enemies").append(enemyLineUp); //Once the click is executed, this appends the #Enemies <div> and puts the enemyLineUp images there.
+		$("#enemies").append(enemyLineUp); //Once the click is executed, this appends the #enemies <div> and puts the enemyLineUp images there.
 		$("#yourCharacter").append(myCharacter); //Once the click is executed, this appends the #yourCharacter <div> and puts the enemyLineUp images there.
 
 		
-	//else {
-		//code to run on all subsequent clicks
-	//}
+	//else { code to run on all subsequent clicks }
+
 	}
 
+})
 
+$("#enemies").on("click", function() {
+	
+	//if there isn't a battle in progress
+	alert("you clicked enemies");
+	
+	//to store the clicked image as the opponent
+	opponent = $(this);
+
+	//to move the opponent to the <div id="offender">
+	$("#offender").append(opponent);
+
+//**** This isn't working **** It's putting the word "enemies" in the <div id="offender">
 })
