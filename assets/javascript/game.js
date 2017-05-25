@@ -62,17 +62,11 @@ $(".characters").on("click", function() {
 		$("#yourCharacter").append(myCharacter); 
 		//Once the click is executed, this appends the #yourCharacter <div> and puts the enemyLineUp images there.
 
-
-
-		//Here I'm attempting to utilize variable to isolate the opponent and move the select image to the <div id="offender">.
-		
-	}
-	//else { code to run on all subsequent clicks }
-	$(".characters").on("click", function() {
+		$(".characters").on("click", function() {
 
 		for (var i = 0; i < enemyLineUp.length; i++) {
 
-			if ( battlingNow === false || ispicked === true || $(this) === enemyLineUp[i].attr("id") || $(this) !== myCharacter.attr("id")){
+			if (battlingNow === false || ispicked === true || $(this).attr("id") === enemyLineUp[i].attr("id") || $(this).attr("id") !== myCharacter.attr("id")){
 
 			opponent = $(this);
 
@@ -86,7 +80,13 @@ $(".characters").on("click", function() {
 
 		}
 
-})
+	})
+
+		//Here I'm attempting to utilize variable to isolate the opponent and move the select image to the <div id="offender">.
+		
+	}
+	//else { code to run on all subsequent clicks }
+	
 
 }) 
 
