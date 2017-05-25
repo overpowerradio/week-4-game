@@ -48,35 +48,45 @@ $(".characters").on("click", function() {
 
 		// If an index in the array of charList is not equal to what I clicked on, I want those arrays to be pushed into the variable I created for my (enemyLineUp).  ** I had to ad id tags on each image, because without it jQuery wasn't able compare the images and determine if they were different or equal, so...
 
-			if ( charList[i].attr("id") !== $(this).attr("id") ) {
+				if ( charList[i].attr("id") !== $(this).attr("id") ) {
 			
 				enemyLineUp.push(charList[i])
 
-			}
+				}
 		}
 		//console.log(enemyLineUp); to check that it works
 		//console.log(myCharacter); to check that it works
 
-		$("#enemies").append(enemyLineUp); //Once the click is executed, this appends the #enemies <div> and puts the enemyLineUp images there.
-		$("#yourCharacter").append(myCharacter); //Once the click is executed, this appends the #yourCharacter <div> and puts the enemyLineUp images there.
+		$("#enemies").append(enemyLineUp); 
+		//Once the click is executed, this appends the #enemies <div> and puts the enemyLineUp images there.
+		$("#yourCharacter").append(myCharacter); 
+		//Once the click is executed, this appends the #yourCharacter <div> and puts the enemyLineUp images there.
 
+
+
+		//Here I'm attempting to utilize variable to isolate the opponent and move the select image to the <div id="offender">.
 		
-	//else { code to run on all subsequent clicks }
-
 	}
+	//else { code to run on all subsequent clicks }
+	$(".characters").on("click", function() {
+
+		for (var i = 0; i < enemyLineUp.length; i++) {
+
+			if ( battlingNow === false || ispicked === true || $(this) === enemyLineUp[i].attr("id") || $(this) !== myCharacter.attr("id")){
+
+			opponent = $(this);
+
+			battlingNow = true;
+			
+			alert("you're battling now!");
+			
+			$("#offender").append(opponent);
+			
+			}
+
+		}
 
 })
 
-$("#enemies").on("click", function() {
-	
-	//if there isn't a battle in progress
-	alert("you clicked enemies");
-	
-	//to store the clicked image as the opponent
-	opponent = $(this);
+}) 
 
-	//to move the opponent to the <div id="offender">
-	$("#offender").append(opponent);
-
-//**** This isn't working **** It's putting the word "enemies" in the <div id="offender">
-})
